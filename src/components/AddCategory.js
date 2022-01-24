@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types';    
+import PropTypes from 'prop-types';   
+ 
 
 export const AddCategory = ({setCategories}) => {
     //el estado default se debe de declarar sino sera undefined
@@ -7,6 +8,7 @@ export const AddCategory = ({setCategories}) => {
 
     const handleInputChange = (e) =>{
         setInputValue(e.target.value);
+        //console.log('HandleInput changed...!');
 
     }
 
@@ -17,13 +19,13 @@ export const AddCategory = ({setCategories}) => {
             setCategories( cats => [inputValue,...cats]);
             setInputValue('');
         }
-        
+        //console.log('Se llamo el handleSubmit..');
         
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            
+            <p>{inputValue}</p>
            <input
                 type='text'
                 value={inputValue}
